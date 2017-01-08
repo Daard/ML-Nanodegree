@@ -49,9 +49,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="85" />
+    <option name="x" value="70" />
     <option name="y" value="23" />
-    <option name="width" value="1284" />
+    <option name="width" value="1333" />
     <option name="height" value="769" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -114,7 +114,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="85" y="23" width="1284" height="769" extended-state="1" />
+    <frame x="70" y="23" width="1333" height="769" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -399,18 +399,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/student_intervention.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/local/lib/python2.7/site-packages/seaborn/categorical.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48735">
           <caret line="3269" column="71" selection-start-line="3269" selection-start-column="71" selection-end-line="3269" selection-end-column="71" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_intervention.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="22" />
         </state>
       </provider>
     </entry>
