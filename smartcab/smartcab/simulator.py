@@ -10,6 +10,7 @@ import time
 import random
 import importlib
 import csv
+from math import pow as p
 
 class Simulator(object):
     """Simulates agents in a dynamic smartcab environment.
@@ -221,8 +222,11 @@ class Simulator(object):
                 print "Agent did not reach the destination."
 
             # Increment
+            a.epsilon = 1/total_trials/total_trials
+            print "EPSILON", a.epsilon
             total_trials = total_trials + 1
             trial = trial + 1
+
 
         # Clean up
         if self.log_metrics:
