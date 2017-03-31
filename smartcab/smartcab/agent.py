@@ -58,7 +58,7 @@ class LearningAgent(Agent):
         # Set 'state' as a tuple of relevant data for the agent
         # sorted(inputs.items()))
         # state = (('waypoint', waypoint), ('light', inputs.get('light')))
-        state = (inputs.get('light'), inputs.get('oncoming'), waypoint)
+        state = (inputs.get('light'), inputs.get('oncoming'), inputs.get('left'), waypoint)
         print "state:", state
         return state
 
@@ -127,10 +127,10 @@ class LearningAgent(Agent):
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
         oldv = self.Q[state][action]
-        if oldv is None:
-            self.Q[state][action] = reward
-        else:
-            self.Q[state][action] = oldv + self.alpha * (reward - oldv)
+        # if oldv is None:
+        #     self.Q[state][action] = reward
+        # else:
+        self.Q[state][action] = oldv + self.alpha * (reward - oldv)
         return
 
 
@@ -167,7 +167,7 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent, learning=True)
+    agent = env.create_agent(LearningAgent, alpha=0.95, learning=True)
 
     ##############
     # Follow the driving agent
@@ -189,7 +189,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=10)
+    sim.run(n_test=20)
 
 
 if __name__ == '__main__':

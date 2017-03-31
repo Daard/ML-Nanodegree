@@ -10,4 +10,4 @@ class experiment(object):
            sum += iteration
         print("probability:", sum)
 
-experiment.run(trials=140, outs=24)
+experiment.run(trials=800, outs=96)

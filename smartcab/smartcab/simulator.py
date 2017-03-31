@@ -222,10 +222,10 @@ class Simulator(object):
                 print "Agent did not reach the destination."
 
             # Increment
-            a.epsilon = 1/total_trials/total_trials
-            print "EPSILON", a.epsilon
+            # a.epsilon -= 0.05
             total_trials = total_trials + 1
             trial = trial + 1
+            a.epsilon = p(0.95, total_trials)
 
 
         # Clean up
