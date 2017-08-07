@@ -6,6 +6,7 @@ from learning import simple_learn
 from learning import parser as p
 from PIL import ImageTk, Image
 
+
 class Sandwich(tk.Frame):
 
     def __init__(self, master):
