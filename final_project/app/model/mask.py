@@ -3,6 +3,8 @@ import numpy as np
 from numpy import *
 import os
 
+
+# create mask.tif file, which used for cov parameter calculation
 def build(dir):
     if not os.path.isfile(dir + '/mask.tif'):
         files = os.listdir(dir)

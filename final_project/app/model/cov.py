@@ -2,12 +2,15 @@ import os
 import cv2
 import numpy as np
 
+
+# flatten data file
 def mask2flat(name):
     img = cv2.imread(name)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     return img.flatten()
 
 
+# build cov file in directory with images and created mask
 def build(dir):
     if not os.path.isfile(dir + '/cov.txt'):
         files = os.listdir(dir)

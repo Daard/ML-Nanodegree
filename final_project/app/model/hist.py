@@ -3,6 +3,7 @@ import cv2
 import os
 
 
+# calculated gray color histogram of images in folder
 def build(folder):
     if not os.path.isfile(folder + '/hists.txt'):
         files = os.listdir(folder)

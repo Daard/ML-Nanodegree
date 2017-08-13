@@ -9,6 +9,7 @@ from PIL import ImageTk, Image
 
 class Sandwich(tk.Frame):
 
+    # init frames
     def __init__(self, master):
         self.files = []
         self.clf = None
@@ -34,19 +35,21 @@ class Sandwich(tk.Frame):
         self.panel.pack(side="right")
         tk.Button(master, text="Image", command=self.image).pack()
 
-
+    # add prebuilt models
     def add_models(self):
         files = tkFileDialog.askopenfiles()
         self.files.append(files)
         for f in files:
             self.groups.insert(tk.END, f.name.split("/")[-1] + "\n")
 
+    # train classifier
     def learn(self):
         def log(str):
             self.T.insert(tk.END, str+'\n')
         data = pd.concat([pd.read_csv(f.name) for row in self.files for f in row], ignore_index=True)
         self.clf = simple_learn.learn(data, p_func=log)
 
+    # predict labels of test directory without labels
     def predict(self):
         dir = tkFileDialog.askdirectory(parent=self)
         model.build(dir)
@@ -61,6 +64,7 @@ class Sandwich(tk.Frame):
             s = named.icol(0).values[index] + ',' + str(v)
             self.P.insert(tk.END, s)
 
+    # show image of labeled test file from selected directory
     def image(self):
         selection = self.P.curselection()
         path = self.pred_images[selection[0]]
